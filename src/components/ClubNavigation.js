@@ -70,6 +70,7 @@ class ClubNavigation extends React.Component {
             iconSize={24}
             onPress={() => this.onTabIcon('requests')}
             selected={this.props.selected} />
+          <SegmentTab />
         </Segment>
       </View>
     );

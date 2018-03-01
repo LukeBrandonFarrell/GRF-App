@@ -1,18 +1,50 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import ClubItem from '../components/ClubItem';
+import { selectClub } from '../actions';
+import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
+import axios from 'react-native-axios';
+import Config from 'react-native-config';
+
+import ClubItem from '../components/ClubItem';
 
 class Clubs extends React.Component {
+  state = { clubs: null };
+  
+  componentDidMount() {
+    axios.get(`${Config.API_URL}/clubs`).then((response) => {
+      this.setState({ clubs : response.data.clubs });
+    }).catch(console.log);
+  }
+  
+  openClub(id){
+    this.props.selectClub(id);
+    Actions.fixtures();
+  }
+  
+  renderItems(){
+    const { clubs } = this.state;
+    
+    if(clubs){
+      return clubs.map((club) => {
+        return (
+          <ClubItem 
+            key={club.id}
+            icon='trophy' 
+            label={club.name} 
+            onPress={ () => this.openClub(club.id) } />
+        );
+      });
+    }
+  }
+  
   render() {
     return (
       <ScrollView>
-        <ClubItem icon='trophy' label='Lorum Ipsum dorum' onPress={ () => Actions.fixtures() } />
-        <ClubItem icon='trophy' label='Lorum Ipsum dorum' onPress={ () => Actions.fixtures() } />
-        <ClubItem icon='trophy' label='Lorum Ipsum dorum' onPress={ () => Actions.fixtures() } />
+        { this.renderItems() }
       </ScrollView>
     );
   }
 }
 
-export default Clubs;
+export default connect(null, { selectClub })(Clubs);

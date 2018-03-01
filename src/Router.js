@@ -1,6 +1,12 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { ActionConst, Router, Stack, Scene, Modal } from 'react-native-router-flux';
+import { connect } from 'react-redux';
+import { setUser } from './actions';
+import axios from 'react-native-axios';
+import Config from 'react-native-config';
+
+import Auth from './scenes/Auth';
 
 import Account from './scenes/Account';
 import News from './scenes/News';
@@ -17,10 +23,23 @@ import ClubRequests from './scenes/ClubRequests';
 import { TabIcon } from './components/common';
 
 class RouterComponent extends React.Component {
+  componentDidMount() {
+    axios.get(`${Config.API_URL}/auth/me`).then((response) => {
+      this.props.setUser(response.data.user);
+    }).catch(console.log);
+  }
+  
   render(){
     return (
       <Router>
         <Stack key="root" hideNavBar>
+          {/*
+          <Stack key="auth" hideNavBar>
+            <Scene key="register"
+              component={Auth} />
+          </Stack>
+        */}
+        
           <Stack key="core"
             tabs={true}
             showLabel={false}
@@ -90,4 +109,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RouterComponent;
+export default connect(null, { setUser })(RouterComponent);
