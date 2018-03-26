@@ -2,14 +2,14 @@ import React from 'react';
 import { View, Text, TextInput, StyleSheet, Platform } from 'react-native';
 
 const TextField = (props) => {
-  const { style, label, value, onChangeText, keyboardType, secureTextEntry, multiline, numberOfLines } = props;
+  const { style, input, label, value, onChange, keyboardType, secureTextEntry, multiline, numberOfLines } = props;
 
   return (
     <View style={styles.container}>
       <TextInput
         style={[ styles.input, style]}
         value={value}
-        onChangeText={onChangeText}
+        onChangeText={onChange}
         placeholder={label}
         keyboardType={keyboardType}
         spellCheck={false}
@@ -17,7 +17,8 @@ const TextField = (props) => {
         autoCapitalize='none'
         secureTextEntry={ secureTextEntry }
         multiline={multiline }
-        numberOfLines={numberOfLines} />
+        numberOfLines={numberOfLines}
+        {...input} />
     </View>
   );
 };

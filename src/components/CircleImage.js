@@ -1,20 +1,20 @@
 import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 
-const CircleImage = ({ image, style }) => {
+const CircleImage = ({ image, width, height, style }) => {
   return (
-    <Image source={ image } style={[ styles.imageStyle, style ]} />
+    <Image source={ image } style={[ styles.imageStyle, { width: width, height: height }, style ]} />
   );
+};
+
+CircleImage.defaultProps = {
+  width: 100,
+  height: 100,
 };
 
 const styles = StyleSheet.create({
   imageStyle : {
-    width: 100,
-    height: 100,
-    opacity: 0.6,
     borderRadius: 20,
-    borderWidth: 3,
-    borderColor: '#000',
   }
 });
 

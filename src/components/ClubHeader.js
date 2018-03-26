@@ -10,7 +10,7 @@ const ClubHeader = (props) => {
       <View style={ styles.bannerContainerStyle }>
         <TouchableOpacity 
           style={ styles.closeButtonStyle } 
-          onPress={ () => Actions.core() }>
+          onPress={ () => Actions.clubs() }>
           <Icon 
             name={'times-circle'} 
             size={35}

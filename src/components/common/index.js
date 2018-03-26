@@ -11,6 +11,7 @@ export * from './form/TextField';
 export * from './form/PasswordField';
 export * from './form/DateInput';
 export * from './form/CustomButton';
+export * from './form/Label';
 
 //Media
 export * from './media/BackgroundImage';
@@ -22,6 +23,7 @@ export * from './navigation/TabIcon';
 export * from './navigation/CartIcon';
 export * from './navigation/Segment';
 export * from './navigation/SegmentTab';
+export * from './navigation/PopupButton';
 
 //Typography
 export * from './typography/IconWithText';

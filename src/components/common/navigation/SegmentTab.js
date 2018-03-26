@@ -2,13 +2,13 @@ import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { IconWithText } from '../typography/IconWithText';
 
-const SegmentTab = ({ id, icon, iconSize, label, highlightColor, selected, onPress }) => {
+const SegmentTab = ({ id, icon, iconSize, label, highlightColor, backgroundColor, selected, onPress }) => {
   const { tabStyle, tabSelectedStyle } = styles;
 
   const highlight = (id == selected) ? true : false;
 
   return (
-    <TouchableOpacity onPress={onPress} style={[tabStyle, highlight ? tabSelectedStyle : {} ]}>
+    <TouchableOpacity onPress={onPress} style={[tabStyle, highlight ? { backgroundColor } : {} ]}>
       <IconWithText
         text={label}
         icon={icon}
@@ -22,7 +22,12 @@ const SegmentTab = ({ id, icon, iconSize, label, highlightColor, selected, onPre
 };
 
 SegmentTab.defaultProps = {
-  selected: ''
+  selected: '',
+  backgroundColor: '#CD2C2E',
+};
+
+SegmentTab.defaultProps = {
+  
 };
 
 const styles = StyleSheet.create({
@@ -32,9 +37,6 @@ const styles = StyleSheet.create({
     padding: 15,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  tabSelectedStyle : {
-    backgroundColor: '#CD2C2E',
   },
 });
 

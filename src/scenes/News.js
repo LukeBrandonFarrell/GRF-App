@@ -9,9 +9,9 @@ import { Spinner } from '../components/common';
 class News extends React.Component {
   state = { news: null }
   
-  componentDidMount() {
-    axios.get(`${Config.GRASSROOTS_URL}/posts`).then((response) => {
-      this.setState({ news : response.data });
+  componentDidMount() {    
+    axios.get('https://public-api.wordpress.com/rest/v1.1/sites/www.teamgrassroots.co.uk/posts/?number=5&fields=id,title,excerpt,featured_image').then((response) => {
+      this.setState({ news : response.data.posts });
     }).catch(console.log);
   }
   
@@ -25,8 +25,9 @@ class News extends React.Component {
       return (
         <NewsItem 
           key={news.id}
-          title={news.title.rendered}
-          excerpt={news.excerpt.rendered} />
+          title={news.title}
+          excerpt={news.excerpt}
+          image={{ uri: news.featured_image }} />
       );
     });
   }

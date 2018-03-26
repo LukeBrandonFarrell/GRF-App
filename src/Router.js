@@ -12,9 +12,15 @@ import Account from './scenes/Account';
 import News from './scenes/News';
 import Clubs from './scenes/Clubs';
 
-import ClubFixtures from './scenes/ClubFixtures';
+import Fixtures from './scenes/fixtures/Fixtures';
+import AddFixture from './scenes/fixtures/AddFixture';
+import ShowFixture from './scenes/fixtures/ShowFixture';
+
 import ClubInfo from './scenes/ClubInfo';
-import ClubPlayers from './scenes/ClubPlayers';
+
+import Players from './scenes/players/Players';
+import AddPlayer from './scenes/players/AddPlayer';
+
 import ClubReport from './scenes/ClubReport';
 import ClubChat from './scenes/ClubChat';
 import ClubMatch from './scenes/ClubMatch';
@@ -68,14 +74,25 @@ class RouterComponent extends React.Component {
           </Stack>
         
           <Scene key="fixtures"
-            component={ ClubFixtures }
+            component={ Fixtures }
             type={ActionConst.RESET}/>
+            
+          <Scene key="AddFixture"
+            component={ AddFixture }/>
+              
+          <Scene key="ShowFixture"
+            component={ ShowFixture }/>
+            
           <Scene key="info"
             component={ ClubInfo }
             type={ActionConst.RESET}/>
+            
           <Scene key="team"
-            component={ ClubPlayers }
+            component={ Players }
             type={ActionConst.RESET}/>
+          <Scene key="AddPlayer"
+            component={ AddPlayer }/>
+            
           <Scene key="report"
             component={ ClubReport }
             type={ActionConst.RESET}/>

@@ -9,8 +9,8 @@ class DetailList extends React.Component {
     if(data){
       return data.map((element, i) => {
         const background = { backgroundColor: '#f0f0f0' };
-
-        if(element.value){
+        
+        if(element){
           return (
             <View key={element.key}>
               <View style={ listItemStyle }>

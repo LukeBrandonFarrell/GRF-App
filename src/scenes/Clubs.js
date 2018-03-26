@@ -17,8 +17,8 @@ class Clubs extends React.Component {
     }).catch(console.log);
   }
   
-  openClub(id){
-    this.props.selectClub(id);
+  openClub(club){
+    this.props.selectClub(club);
     Actions.fixtures();
   }
   
@@ -32,7 +32,7 @@ class Clubs extends React.Component {
             key={club.id}
             icon='trophy' 
             label={club.name} 
-            onPress={ () => this.openClub(club.id) } />
+            onPress={ () => this.openClub(club) } />
         );
       });
     }
