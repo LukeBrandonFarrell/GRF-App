@@ -19,7 +19,7 @@ class AddFixtures extends React.Component {
         datetime: values.datetime,
         type: values.homeaway,
       }).then((response) => {
-        Actions.fixtures();
+        Actions.Fixtures();
       }).catch(console.log);
     };
 

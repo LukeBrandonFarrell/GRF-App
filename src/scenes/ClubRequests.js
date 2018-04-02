@@ -44,7 +44,7 @@ class ClubRequests extends React.Component {
   
   render() {
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <ClubHeader />
         { this.renderRequests() }
       </View>

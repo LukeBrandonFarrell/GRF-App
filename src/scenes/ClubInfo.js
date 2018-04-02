@@ -21,7 +21,7 @@ class ClubInfo extends React.Component {
     });
     
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <ClubHeader />
         <ScrollView style={{ backgroundColor: 'white' }}>
           <DetailList data={ clubData } />

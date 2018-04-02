@@ -20,7 +20,7 @@ class AddPlayer extends React.Component {
         pos_x: 0,
         pos_y: 0,
       }).then((response) => {
-        Actions.team();
+        Actions.Team();
       }).catch(console.log);
     };
 

@@ -24,6 +24,8 @@ class TabIcon extends React.Component {
 
 const styles = StyleSheet.create({
   tabContainer : {
+    width: 75,
+    height: 75,
     flex:1,
     flexDirection:'column',
     alignItems:'center',

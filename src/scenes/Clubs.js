@@ -19,7 +19,7 @@ class Clubs extends React.Component {
   
   openClub(club){
     this.props.selectClub(club);
-    Actions.fixtures();
+    Actions.Fixtures();
   }
   
   renderItems(){

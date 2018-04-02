@@ -14,7 +14,7 @@ const MemberItem = ({ member, onPress }) => {
         <CircleImage image={ require('../../resources/football.png') } width={45} height={45} />
       </CardSection>
 
-      <CardSection style={{ flex: 6, justifyContent: 'flex-start', flexDirection: 'column' }}>
+      <CardSection style={{ flex: 6, marginLeft: 6, justifyContent: 'flex-start', flexDirection: 'column' }}>
         <Text style={ nameStyle }> { member.user.display_name } </Text>
       </CardSection>
     </Card>

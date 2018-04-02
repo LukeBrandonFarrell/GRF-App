@@ -59,12 +59,13 @@ class RouterComponent extends React.Component {
               title="Account"
               iconName="cog"
               icon={TabIcon}/>
-              
+            
             <Scene key="news"
               component={News}
               title="News"
               iconName="rss"
-              icon={TabIcon}/>
+              icon={TabIcon}
+              initial={true}/>
               
             <Scene key="clubs"
               component={Clubs}
@@ -73,7 +74,7 @@ class RouterComponent extends React.Component {
               icon={TabIcon}/>
           </Stack>
         
-          <Scene key="fixtures"
+          <Scene key="Fixtures"
             component={ Fixtures }
             type={ActionConst.RESET}/>
             
@@ -83,26 +84,26 @@ class RouterComponent extends React.Component {
           <Scene key="ShowFixture"
             component={ ShowFixture }/>
             
-          <Scene key="info"
+          <Scene key="Info"
             component={ ClubInfo }
             type={ActionConst.RESET}/>
             
-          <Scene key="team"
+          <Scene key="Team"
             component={ Players }
             type={ActionConst.RESET}/>
           <Scene key="AddPlayer"
             component={ AddPlayer }/>
             
-          <Scene key="report"
+          <Scene key="Report"
             component={ ClubReport }
             type={ActionConst.RESET}/>
-          <Scene key="chat"
+          <Scene key="Chat"
             component={ ClubChat }
             type={ActionConst.RESET}/>
-          <Scene key="match"
+          <Scene key="Match"
             component={ ClubMatch }
             type={ActionConst.RESET}/>
-          <Scene key="requests"
+          <Scene key="Requests"
             component={ ClubRequests }
             type={ActionConst.RESET}/>
         </Stack>

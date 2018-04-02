@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { IconWithText } from '../typography/IconWithText';
+import TextWith from 'react-native-text-with';
 
 const SegmentTab = ({ id, icon, iconSize, label, highlightColor, backgroundColor, selected, onPress }) => {
   const { tabStyle, tabSelectedStyle } = styles;
@@ -9,14 +10,7 @@ const SegmentTab = ({ id, icon, iconSize, label, highlightColor, backgroundColor
 
   return (
     <TouchableOpacity onPress={onPress} style={[tabStyle, highlight ? { backgroundColor } : {} ]}>
-      <IconWithText
-        text={label}
-        icon={icon}
-        iconSize={iconSize || 16}
-        textSize={14}
-        iconColor={highlight ? highlightColor : 'black'}
-        textColor={highlight ? highlightColor : 'black'}
-      />
+      { icon }
     </TouchableOpacity>
   );
 };

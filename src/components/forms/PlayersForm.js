@@ -7,9 +7,9 @@ import { PopupButton, TextField, Label, NarrowContainer } from '../common';
 class PlayersForm extends React.Component {
   render() {
     const { onSubmit, submitButtonColour } = this.props;
-    const { 
-      handleSubmit, 
-      submitting 
+    const {
+      handleSubmit,
+      submitting
     } = this.props;
 
     return (
@@ -23,7 +23,7 @@ class PlayersForm extends React.Component {
             <Field name="position" component={TextField} type="text"/>
           </NarrowContainer>
         </ScrollView>
-        
+
         <PopupButton
           label='Save Player'
           icon='check'
@@ -37,4 +37,3 @@ class PlayersForm extends React.Component {
 }
 
 export default reduxForm({ form: 'AddPlayer' })(PlayersForm);
-
